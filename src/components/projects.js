@@ -52,6 +52,10 @@ class Projects extends Component {
                 url = 'https://github.com/AustinDLatture/portfoliosite'
                 window.open(url, '_blank');
                 break;
+            case "basicchat":
+                url = 'https://github.com/AustinDLatture/BasicChat'
+                window.open(url, '_blank');
+                break;
             default:
                 break;
         }
@@ -101,7 +105,7 @@ class Projects extends Component {
                                 Next Project
                             </CardTitle>
                             <CardText>
-                                My next secret project, coming soon.
+                                My next React project is a secret, but it is coming soon.
                             </CardText>
                             <CardActions border>
                                 <Button colored>GitHub</Button>
@@ -113,13 +117,13 @@ class Projects extends Component {
                 return (
                     <Card shadow={5} style={{margin: 'auto', width: '25%'}}>
                         <CardTitle style={{color: 'white', height: '176px', background: `url(${nodeLogo}) center / cover`}}>
-                            Node Project
+                            BasicChat
                         </CardTitle>
                         <CardText>
-                            My node project
+                            A simple, real-time chat application using socket.io for learning web sockets.
                         </CardText>
                         <CardActions border>
-                            <Button colored>GitHub</Button>
+                            <Button colored onClick={ () => this.openGitHubLink('basicchat')}>GitHub</Button>
                         </CardActions>
                     </Card>
                 );
