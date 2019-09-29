@@ -42,9 +42,18 @@ class Projects extends Component {
     }
 
     openGitHubLink(target) {
-        if (target === 'backdrop') {
-            const url = 'https://github.com/AustinDLatture/Backdrop'
-            window.open(url, '_blank');
+        let url = "";
+        switch(target) {
+            case "backdrop":
+                url = 'https://github.com/AustinDLatture/Backdrop'
+                window.open(url, '_blank');
+                break;
+            case "portfolio":
+                url = 'https://github.com/AustinDLatture/portfoliosite'
+                window.open(url, '_blank');
+                break;
+            default:
+                break;
         }
     }
 
@@ -62,7 +71,7 @@ class Projects extends Component {
                                 This website has been developed in React using react-mdl components.
                             </CardText>
                             <CardActions border>
-                                <Button colored>GitHub</Button>
+                                <Button colored onClick={ () => this.openGitHubLink('portfolio')}>GitHub</Button>
                             </CardActions>
                         </Card>
                         <Card shadow={5} style={{margin: 'auto', width: '25%'}}>
