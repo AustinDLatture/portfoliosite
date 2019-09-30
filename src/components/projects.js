@@ -20,6 +20,13 @@ import truck from '../images/truck.jpg'
 import nodeLogo from '../images/nodeLogo.jpg'
 import mapsLogo from '../images/mapsLogo.jpg'
 
+const isEdge = window.navigator.userAgent.indexOf('Edge') !== -1
+const isIE = /*@cc_on!@*/false || !!document.documentMode;
+const isFirefox = typeof InstallTrigger !== 'undefined';
+const isSafari = (navigator.userAgent.toLowerCase().indexOf('safari/') > -1) && (navigator.userAgent.toLowerCase().indexOf('chrome') <= -1);
+
+const isBrowserWithoutDialog = (isEdge || isIE || isFirefox || isSafari);
+
 class Projects extends Component {
     constructor(props) {
         super(props);
@@ -78,6 +85,7 @@ class Projects extends Component {
                                 <Button colored onClick={ () => this.openGitHubLink('portfolio')}>GitHub</Button>
                             </CardActions>
                         </Card>
+                        { !isBrowserWithoutDialog && 
                         <Card shadow={5} style={{margin: 'auto', width: '25%'}}>
                             <CardTitle style={{color: 'white', height: '176px', background: `url(${truck}) center / cover`}}>
                                 FreightBuilder
@@ -92,7 +100,7 @@ class Projects extends Component {
                                 <DialogTitle>Employer Property</DialogTitle>
                                 <DialogContent>
                                     <p>
-                                        I am fortunate enough to be a part of a team of developers working on this product for our employer and therefore I cannot disclose any additional information about it. 
+                                        I am fortunate enough to be a part of a team of developers working on this product for our employer and therefore I can only write about this product in limited detail. 
                                     </p>
                                 </DialogContent>
                                 <DialogActions>
@@ -100,6 +108,17 @@ class Projects extends Component {
                                 </DialogActions>
                             </Dialog>
                         </Card>
+                        }
+                        { isBrowserWithoutDialog &&
+                            <Card shadow={5} style={{margin: 'auto', width: '25%'}}>
+                            <CardTitle style={{color: 'white', height: '176px', background: `url(${truck}) center / cover`}}>
+                                FreightBuilder
+                            </CardTitle>
+                            <CardText>
+                                A logistics industry web application used by thousands of people that allows them to plan and manage shipments as they are built into loads and shipped worldwide.  I am fortunate enough to be a part of a team of developers working on this product for our employer and therefore I can only write about this product in limited detail. 
+                            </CardText>
+                            </Card>
+                        }
                         <Card shadow={5} style={{margin: 'auto', width: '25%'}}>
                             <CardTitle style={{color: 'white', height: '176px', background: `url(${reactLogo}) center / cover`}}>
                                 Next Project
