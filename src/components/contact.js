@@ -28,6 +28,7 @@ class Contact extends Component {
                     <Cell col={6}>
                         <h2> Contact Me </h2>
                         <hr/>
+                        <div className="contact-wrapper">
                         <List className="contact-list">
                             <ListItem>
                                 <ListItemContent style={{fontSize: '20px', fontFamily: 'Anton', color: 'white', justifyContent: 'left'}}>
@@ -55,6 +56,7 @@ class Contact extends Component {
                                 </ListItemContent>
                             </ListItem>
                         </List>
+                        </div>
                     </Cell>
                 </Grid>
             </div>

@@ -89,6 +89,10 @@
   height: 100%;
 }
 
+.contact-wrapper {
+  display:flex;
+  justify-content: center;
+}
 
 .contact-body {
   background: #159957;  /* fallback for old browsers */
@@ -126,6 +130,5 @@
 .contact-list i {
   font-size: 66px;
   padding-right: 4rem;
-  padding-left: 6rem;
   color: white;
 }
