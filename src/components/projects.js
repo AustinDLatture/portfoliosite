@@ -63,6 +63,9 @@ class Projects extends Component {
                 url = 'https://github.com/AustinDLatture/BasicChat'
                 window.open(url, '_blank');
                 break;
+            case "baraboard":
+                url = 'https://github.com/AustinDLatture/BaraBoard'
+                window.open(url, '_blank');
             default:
                 break;
         }
@@ -121,13 +124,13 @@ class Projects extends Component {
                         }
                         <Card shadow={5} style={{margin: 'auto', width: '25%'}}>
                             <CardTitle style={{color: 'white', height: '176px', background: `url(${reactLogo}) center / cover`}}>
-                                Next Project
+                                BaraBoard
                             </CardTitle>
                             <CardText>
-                                My next React project is a secret, but it is coming soon.
+                                BaraBoard serves as a lightweight board for Agile task management for individual projects.
                             </CardText>
                             <CardActions border>
-                                <Button colored>GitHub</Button>
+                                <Button colored onClick={ () => this.openGitHubLink('baraboard')}>GitHub</Button>
                             </CardActions>
                         </Card>
                     </div>
